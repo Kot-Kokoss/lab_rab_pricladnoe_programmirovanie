@@ -1,14 +1,18 @@
-s = (int(input('Введите колличество сотрудников числом = ')))
+#переменные и массивы
 distance = []
 distanceId = {}
 tarif = []
 tarifId = {}
 itog = 0
 #внесение данных в массивы тарифов и растояния
+s = (int(input('Введите колличество сотрудников числом = ')))
+if s == int:#проверка ввода
+    print('Ошибка, неверная форма ввода данных!')
 for i in range(1, s + 1):
     x = int(input('Введите расстояние от работы до дома, ' + str(i) + ' сотрудника в км = '))
     distance.append(x)
     distanceId[x] = i
+for i in range(1, s + 1):
     y = int(input('Введите стоимость одного км в ' + str(i) + ' такси = '))
     tarif.append(y)
     tarifId[y] = i
@@ -276,6 +280,3 @@ if n > 3:
         itog = itog + x1 + ' '
     itog = itog + rub
 print('Cумма всех поездок равна:', str.capitalize(itog))
-
-
-
