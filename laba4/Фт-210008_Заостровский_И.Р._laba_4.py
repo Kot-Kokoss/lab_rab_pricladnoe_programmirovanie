@@ -8,11 +8,11 @@ itog = 0
 s = (int(input('Введите колличество сотрудников числом = ')))
 if s == int:#проверка ввода
     print('Ошибка, неверная форма ввода данных!')
-for i in range(1, s + 1):
+for i in range(1, s + 1):#расстояние
     x = int(input('Введите расстояние от работы до дома, ' + str(i) + ' сотрудника в км = '))
     distance.append(x)
     distanceId[x] = i
-for i in range(1, s + 1):
+for i in range(1, s + 1):#тариф такси
     y = int(input('Введите стоимость одного км в ' + str(i) + ' такси = '))
     tarif.append(y)
     tarifId[y] = i
