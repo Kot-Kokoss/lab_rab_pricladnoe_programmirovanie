@@ -8,21 +8,34 @@ itog = 0
 s = (int(input('Введите колличество сотрудников числом = ')))
 if s == int:#проверка ввода
     print('Ошибка, неверная форма ввода данных!')
-for i in range(1, s + 1):#расстояние
+for i in range(1, s + 1):
     x = int(input('Введите расстояние от работы до дома, ' + str(i) + ' сотрудника в км = '))
     distance.append(x)
-    distanceId[x] = i
-for i in range(1, s + 1):#тариф такси
+    distanceId[i] = x
+for i in range(1, s + 1):
     y = int(input('Введите стоимость одного км в ' + str(i) + ' такси = '))
     tarif.append(y)
-    tarifId[y] = i
+    tarifId[i] = y
 #сортировка
 distance.sort(reverse=True)
 tarif.sort()
 #распределение по такси + расчет стоимости
 for i in range(1, s + 1):
-    price = distance[i - 1] * tarif[i - 1]
-    print('Сотрудник -', distanceId[distance[i - 1]], 'садится в такси №', tarifId[tarif[i - 1]])
+    d = distance[i - 1]
+    t = tarif[i - 1]
+    price = d * t
+#рассадка по такси
+    for n in range(1, s + 1):
+        if d == distanceId[n]:
+            d = n
+            distanceId[n] = 0
+
+    for n in range(1, s + 1):
+        if t == tarifId[n]:
+            t = n
+            tarifId[n] = 0
+#вывод результатов
+    print('Сотрудник -', d, 'садится в такси №', t)
     itog = itog + price
 #присвоение рублей
 a1 = itog % 10
@@ -279,4 +292,5 @@ if n > 3:
     if x1 != '':
         itog = itog + x1 + ' '
     itog = itog + rub
+#вывод результатов
 print('Cумма всех поездок равна:', str.capitalize(itog))
