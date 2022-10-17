@@ -4,6 +4,7 @@ distanceId = {}
 tarif = []
 tarifId = {}
 itog = 0
+itog_s = {}
 #внесение данных в массивы тарифов и растояния
 s = (int(input('Введите колличество сотрудников числом = ')))
 if s == int:#проверка ввода
@@ -34,9 +35,11 @@ for i in range(1, s + 1):
         if t == tarifId[n]:
             t = n
             tarifId[n] = 0
-#вывод результатов
-    print('Сотрудник -', d, 'садится в такси №', t)
+    itog_s[d] = t
     itog = itog + price
+#вывод результатов
+for i in range(1, s + 1):
+    print('Сотрудник -', i, 'садится в такси №', itog_s[i])
 #присвоение рублей
 a1 = itog % 10
 a2 = itog // 10 % 10
