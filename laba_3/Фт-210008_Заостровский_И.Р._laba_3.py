@@ -38,7 +38,6 @@ if x == 0:
         if ind > 32:
             ind = c - abs(32 - abc.index(a)) - 1
         itog = itog + abc[ind]
-    print(itog)
 #расшифровка
 if x == 1:
     for i in range(0, len(s)):
@@ -47,4 +46,4 @@ if x == 1:
         if ind < 0:
             ind = 33 - (c - abs(0 - abc.index(a)))
         itog = itog + abc[ind]
-    print(itog)
+ print(itog)
