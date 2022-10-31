@@ -46,4 +46,4 @@ if x == 1:
         if ind < 0:
             ind = 33 - (c - abs(0 - abc.index(a)))
         itog = itog + abc[ind]
- print(itog)
+print(itog)
