@@ -292,11 +292,7 @@ if n > 3:
     if 5 > a4 > 0 and a5 != 1:
         if a4 == 1:
             tis = 'тысяча'
-        elif a4 == 2:
-            tis = 'тысячи'
-        elif a4 == 3:
-            tis = 'тысячи'
-        elif a4 == 4:
+        elif a4 > 1:
             tis = 'тысячи'
     else:
         tis = 'тысяч'
