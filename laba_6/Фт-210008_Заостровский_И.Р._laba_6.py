@@ -46,9 +46,9 @@ while p == 1:
             k = -1
     #расчёт суммы каждой строки
     for i in range(0, n):
-        s = 0
+        s = 1
         for j in range(0, n):
-            s += A[i][j]
+            s = s * A[i][j]
         s = s ** (1/n)
         w[i] = s
     # print(*A, sep="\n", end="\n\n")
@@ -57,7 +57,7 @@ while p == 1:
     for i in w:
         itog += w[i]
     for v in range(0, n):
-        print('Итоговый коэффицент w'+ str(v + 1) + '=' , toFixed(w[v]/(itog - w[v]), 2))
+        print('Итоговый коэффицент w'+ str(v + 1) + '=', toFixed(w[v] / itog, 2))
     p = int(input('Для продолжения работы с программой введите - "1", для завершения введите - "0". = '))
     n = 0
     if p == 0:
