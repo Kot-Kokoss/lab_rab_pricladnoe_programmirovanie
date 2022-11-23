@@ -4,6 +4,7 @@ m = 0
 n = 0
 figure1 = ''
 figure2 = ''
+
 try:
     #ввод значений перменных с обработкой ошибок ввода
     while figure1 == '':
@@ -14,6 +15,7 @@ try:
                 figure1 = ''
         except ValueError:
             print('Ошибка ввода!')
+            
     while k == 0:
         try:
             k = int(input('Введите номер клетки 1 фигуры по горизонтали целым числом от 1 до 8 = '))
@@ -22,6 +24,7 @@ try:
                 k = 0
         except ValueError:
             print('Ошибка ввода!')
+
     while l == 0:
         try:
             l = int(input('Введите номер клетки 1 фигуры по вертикали целым числом от 1 до 8 = '))
@@ -30,6 +33,7 @@ try:
                 l = 0
         except ValueError:
             print('Ошибка ввода!')
+
     while figure2 == '':
         try:
             figure2 = str(input('Введите тип фигуры: ферзь, ладья, слон или конь = '))
@@ -38,6 +42,7 @@ try:
                 figure2 = ''
         except ValueError:
             print('Ошибка ввода!')
+
     while m == 0:
         try:
             m = int(input('Введите номер клетки 2 фигуры по горизонтали целым числом от 1 до 8 = '))
@@ -46,6 +51,7 @@ try:
                 m = 0
         except ValueError:
             print('Ошибка ввода!')
+
     while n == 0:
         try:
             n = int(input('Введите номер клетки 2 фигуры по вертикали целым числом от 1 до 8 = '))
@@ -54,6 +60,7 @@ try:
                 n = 0
         except ValueError:
             print('Ошибка ввода!')
+
     #ответ на вопрос а
     if (k + l) % 2 == 0:
         color1 = 0
@@ -63,11 +70,14 @@ try:
         color2 = 0
     else:
         color2 = 1
+
     if color2 == color1:
         answera = 'Фигуры находятся на клетках одинакового цвета'
     else:
         answera = 'Фигуры находятся на клетках разных цветов'
+
     print('Ответ на вопрос a -', answera, end="\n\n")
+
     #создание шахматного поля
     A = []
     for i in range(8, 0, -1):
@@ -86,6 +96,7 @@ try:
                 else:
                     b.append('#')
             A.append(b)
+
     #присвоение символов фигурам и постановка на шахматное поле
     if figure1 == 'ферзь':
         figure1 = '♛'
@@ -95,8 +106,10 @@ try:
         figure1 = '♝'
     if figure1 == 'конь':
         figure1 = '♞'
+
     l = abs(l - 9)
     A[l - 1][k - 1] = figure1
+
     if figure2 == 'ферзь':
         figure2 = '♕'
     if figure2 == 'ладья':
@@ -105,9 +118,12 @@ try:
         figure2 = '♗'
     if figure2 == 'конь':
         figure2 = '♘'
+
     n = abs(n - 9)
     A[n - 1][m - 1] = figure2
+
     print(*A, sep="\n", end="\n\n")
+
     #ответ на вопрос б
     #ферзь
     if figure1 == '♛':
@@ -117,12 +133,14 @@ try:
             answerb = 'Угрожает'
         else:
             answerb = 'Не угрожает'
+
     #ладья
     if figure1 == '♜':
         if k == m or l == n:
             answerb = 'Угрожает'
         else:
             answerb = 'Не угрожает'
+
     #слон
     if figure1 == '♝':
         if answera == 'Фигуры находятся на клетках разных цветов':
@@ -132,6 +150,7 @@ try:
                 answerb = 'Угрожает'
             else:
                 answerb = 'Не угрожает'
+
     #конь
     if figure1 == '♞':
         if abs(n - l) + abs(m - k) == 3:
@@ -140,25 +159,24 @@ try:
             answerb = 'Не угрожает'
 
     print('Ответ на вопрос б -', answerb, end="\n\n")
+
     #ответ на вопрос в
-    if (figure1 == '♛' or figure1 == '♜' or figure1 == '♝') and answerb == 'Угрожает':
-        answerc = 'Возможно попасть за 1 ход'
-    elif (figure1 == '♛' or figure1 == '♜') and answerb == 'Не угрожает':
+    if (figure1 == '♛' or figure1 == '♜') and answerb == 'Не угрожает':
         if A[l - 1][k] == '#':
             A[l - 1][k - 1] = '_'
         else:
             A[l - 1][k - 1] = '#'
+
         l = n
-        answerc = 'За 1 ход не выйдет. В 1 ход переместить в (' + str(k) + ',' + str(9 - l) + '), 2 ходом попадаем на поле 2й фигуры.'
     elif figure1 == '♝' and answerb == 'Не угрожает':
         if answera == 'Фигуры находятся на клетках разных цветов':
-            answerc = 'Цвет поля слона не совпадает с цветом 2й фигуры, поэтому попасть на поле 2й фигуры невозможно.'
+            answerc = answerb
         else:
             if A[l - 1][k] == '#':
                 A[l - 1][k - 1] = '_'
             else:
                 A[l - 1][k - 1] = '#'
-            print('l=', l, 'n=', n, 'к=', k, 'm=', m)
+
             if n < l:
                 if m > k:
                     while abs(l - n) != abs(k - m):
@@ -214,13 +232,16 @@ try:
                         while abs(l - n) != abs(k - m):
                             l += 1
                             k += 1
-    A[l - 1][k - 1] = figure1
-    answerc = 'За 1 ход не выйдет. В 1 ход переместить в (' + str(k) + ',' + str(abs(l - 9)) + '), 2 ходом попадаем на поле 2й фигуры.'
-    print(*A, sep="\n", end="\n\n")
-    if figure1 == '♞' and answerb == 'Не угрожает':
+    elif figure1 == '♞' and answerb == 'Не угрожает':
         answerc = 'Ответ на данный вопрос не предусмотрен'
-    if answerb == 'Угрожает':
-        answerc = 'С поля фигуры 1 можно попасть на поле фигуры 2'
+    elif answerb == 'Угрожает':
+        answerc = 'С поля фигуры 1 можно попасть на поле фигуры 2.'
+    else:
+        answerc = 'За 1 ход не выйдет. В 1 ход переместить в (' + str(k) + ',' + str(
+            abs(l - 9)) + '), 2 ходом попадаем на поле 2й фигуры.'
+
+    A[l - 1][k - 1] = figure1
+    print(*A, sep="\n", end="\n\n")
     print('Ответ на вопрос в -', answerc)
 except NameError:
     print('Ошибка ввода, слон не может ходить по фигурам разного цвета!')
