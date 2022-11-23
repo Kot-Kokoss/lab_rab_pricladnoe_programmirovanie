@@ -168,7 +168,7 @@ try:
             A[l - 1][k - 1] = '#'
 
         l = n
-    elif figure1 == '♝' and answerb == 'Не угрожает':
+    elif figure1 == '♝':
         if answera == 'Фигуры находятся на клетках разных цветов':
             answerc = answerb
         else:
