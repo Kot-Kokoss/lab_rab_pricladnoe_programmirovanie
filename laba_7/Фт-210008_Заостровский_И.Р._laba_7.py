@@ -1,3 +1,8 @@
+from loguru import logger
+
+logger.remove(handler_id=None)
+logger.add('laba_7.log', format='{time} {level} {message}', level='INFO', rotation='10 KB', compression='zip')
+
 k = 0
 l = 0
 m = 0
@@ -12,18 +17,24 @@ try:
             figure1 = str(input('Введите тип фигуры: ферзь, ладья, слон или конь = '))
             if (figure1 != 'ферзь') and (figure1 != 'ладья') and (figure1 != 'слон') and (figure1 != 'конь'):
                 print('Ошибка ввода!')
+                logger.error('figure1 = ' + str(figure1))
                 figure1 = ''
         except ValueError:
             print('Ошибка ввода!')
-            
+            logger.error('figure1 = ' + str(figure1))
+    logger.info('figure1 = ' + str(figure1))
+
     while k == 0:
         try:
             k = int(input('Введите номер клетки 1 фигуры по горизонтали целым числом от 1 до 8 = '))
             if k > 8 or k < 1 or k % 1 > 0:
                 print('Ошибка ввода!')
+                logger.error('k = ' + str(k))
                 k = 0
         except ValueError:
             print('Ошибка ввода!')
+            logger.error('k = ' + str(k))
+    logger.info('k = ' + str(k))
 
     while l == 0:
         try:
@@ -31,35 +42,47 @@ try:
             if l > 8 or l < 1 or l % 1 > 0:
                 print('Ошибка ввода!')
                 l = 0
+                logger.error('l = ' + str(l))
         except ValueError:
             print('Ошибка ввода!')
+            logger.error('l = ' + str(l))
+    logger.info('l = ' + str(l))
 
     while figure2 == '':
         try:
             figure2 = str(input('Введите тип фигуры: ферзь, ладья, слон или конь = '))
             if (figure2 != 'ферзь') and (figure2 != 'ладья') and (figure2 != 'слон') and (figure2 != 'конь'):
                 print('Ошибка ввода!')
+                logger.error('figure2' + str(figure2))
                 figure2 = ''
         except ValueError:
             print('Ошибка ввода!')
+            logger.error('figure2 = ' + str(figure2))
+    logger.info('figure2 = ' + str(figure2))
 
     while m == 0:
         try:
             m = int(input('Введите номер клетки 2 фигуры по горизонтали целым числом от 1 до 8 = '))
             if m > 8 or m < 1 or m % 1 > 0:
                 print('Ошибка ввода!')
+                logger.error('m = ' + str(m))
                 m = 0
         except ValueError:
             print('Ошибка ввода!')
+            logger.error('m = ' + str(m))
+    logger.info('m = ' + str(m))
 
     while n == 0:
         try:
             n = int(input('Введите номер клетки 2 фигуры по вертикали целым числом от 1 до 8 = '))
             if n > 8 or n < 1 or n % 1 > 0:
                 print('Ошибка ввода!')
+                logger.error('n = ' + str(n))
                 n = 0
         except ValueError:
             print('Ошибка ввода!')
+            logger.error('n = ' + str(n))
+    logger.info('n = ' + str(n))
 
     #ответ на вопрос а
     if (k + l) % 2 == 0:
@@ -75,7 +98,7 @@ try:
         answera = 'Фигуры находятся на клетках одинакового цвета'
     else:
         answera = 'Фигуры находятся на клетках разных цветов'
-
+    logger.info('answera = ' + str(answera))
     print('Ответ на вопрос a -', answera, end="\n\n")
 
     #создание шахматного поля
@@ -157,7 +180,7 @@ try:
             answerb = 'Угрожает'
         else:
             answerb = 'Не угрожает'
-
+    logger.info('answerb = ' + str(answerb))
     print('Ответ на вопрос б -', answerb, end="\n\n")
 
     #ответ на вопрос в
@@ -239,7 +262,7 @@ try:
     else:
         answerc = 'За 1 ход не выйдет. В 1 ход переместить в (' + str(k) + ',' + str(
             abs(l - 9)) + '), 2 ходом попадаем на поле 2й фигуры.'
-
+    logger.info('answerc = ' + str(answerc))
     A[l - 1][k - 1] = figure1
     print(*A, sep="\n", end="\n\n")
     print('Ответ на вопрос в -', answerc)
