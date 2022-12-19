@@ -62,7 +62,9 @@ while k > 0:
         except ValueError:
             print('Ошибка ввода!')
             logger.error('user_number = ' + str(user_number))
-
+            
+    logger.info('user_number = ' + str(user_number))
+    
     #обработка ответов
     if hidden_number > user_number:
         message = 'Загаданное число больше вашего'
