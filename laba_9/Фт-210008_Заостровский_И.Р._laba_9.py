@@ -52,8 +52,12 @@ while k > 0:
         try:
             user_number = int(input('Введите число = '))
             if user_number < 1:
-                logger.error('user_number = ' + str(user_number))
                 print('Ошибка ввода! Введите число побольше')
+                logger.error('user_number = ' + str(user_number))
+                user_number = 0
+            elif user_number > n:
+                print('Ошибка ввода! Введите число поменьше')
+                logger.error('user_number = ' + str(user_number))
                 user_number = 0
         except ValueError:
             print('Ошибка ввода!')
