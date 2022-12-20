@@ -26,7 +26,7 @@ while n == 0:
 logger.info('N = ' + str(n))
 
 #присвоение значения значения для загадываемого числа
-hidden_number = randrange(1, n, 2)
+hidden_number = randrange(1, n)
 logger.info('hidden_number = ' + str(hidden_number))
 
 #проверка ввода количества попыток
