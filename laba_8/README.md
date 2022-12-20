@@ -9,6 +9,8 @@
 Среда разработки: PyCharm
 ## Тесты
 Тест-1
-![Alt](https://raw.githubusercontent.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/main/laba_9/img/laba_9_test_1.png "Тест-1")
+![Alt](https://raw.githubusercontent.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/main/laba_8/img/laba_8_test_1.png "Тест-1")
 Тест-2
-![Alt](https://raw.githubusercontent.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/main/laba_9/img/laba_9_test_2.png "Тест-2")
+![Alt](https://raw.githubusercontent.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/main/laba_8/img/laba_8_test_2.png "Тест-2")
+Тест-3
+![Alt](https://raw.githubusercontent.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/main/laba_8/img/laba_8_test_3.png "Тест-3")
