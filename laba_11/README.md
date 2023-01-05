@@ -22,8 +22,8 @@
 Тест-2
 ![Alt](https://github.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/blob/main/laba_11/img/laba_11_test_2.png?raw=true "Тест-2")
 Тест-3
-![Alt](https://github.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/blob/main/laba_11/img/laba_11_test_3.png?raw=true "Тест-3")
-Тест-4
-![Alt](https://github.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/blob/main/laba_11/img/laba_11_test_4.png?raw=true "Тест-4")
-Тест-5
+![Alt](https://github.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/blob/main/laba_11/img/laba_11_test_3.png?raw=true "Тест-3") 
+Тест-4  
+![Alt](https://github.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/blob/main/laba_11/img/laba_11_test_4.png?raw=true "Тест-4")  
+Тест-5  
 ![Alt](https://github.com/Kot-Kokoss/lab_rab_pricladnoe_programmirovanie/blob/main/laba_11/img/laba_11_test_5.png?raw=true "Тест-5")
